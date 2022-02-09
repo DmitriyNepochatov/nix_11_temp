@@ -5,9 +5,11 @@ import java.io.InputStreamReader;
 
 import org.apache.commons.lang3.StringUtils;
 
-public class TaskTwo
+public final class CountSortLettersStr
 {
-    public void taskTwoMethod()
+    private CountSortLettersStr(){}
+
+    public static void makeCountSortLettersStr()
     {
         try
         {
@@ -23,11 +25,11 @@ public class TaskTwo
                     continue;
                 }
 
-                String finishedString = "";
+                StringBuilder finishedString = new StringBuilder();
                 for (int i = 0; i < line.length(); i++)
                 {
                     if ((line.charAt(i) >= 'A' && line.charAt(i) <= 'z') || (line.charAt(i) >= 'А' && line.charAt(i) <= 'я'))
-                        finishedString += line.charAt(i);
+                        finishedString.append(line.charAt(i));
                 }
 
                 char[] symbols = new char[33];

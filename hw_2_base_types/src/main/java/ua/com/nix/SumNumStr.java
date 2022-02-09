@@ -5,9 +5,11 @@ import java.io.InputStreamReader;
 
 import org.apache.commons.lang3.*;
 
-public class TaskOne
+public final class SumNumStr
 {
-    public void taskOneMethod()
+    private SumNumStr(){}
+
+    public static void makeSumNumStr()
     {
         try
         {
