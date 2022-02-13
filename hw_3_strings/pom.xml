@@ -9,28 +9,27 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>hw_2_base_types</artifactId>
+    <artifactId>hw_3_strings</artifactId>
     <packaging>jar</packaging>
-    <name>hw_2_base_types</name>
+    <name>hw_3_strings</name>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <commons.lang3.version>3.12.0</commons.lang3.version>
         <maven.jar.plugin.version>3.2.0</maven.jar.plugin.version>
         <maven.shade.plugin.version>3.2.0</maven.shade.plugin.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>${commons.lang3.version}</version>
+            <groupId>ua.com.nix</groupId>
+            <artifactId>reverse_string</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
     <build>
-        <finalName>hw_2_base_types</finalName>
+        <finalName>hw_3_strings</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
