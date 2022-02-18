@@ -76,29 +76,8 @@ public final class PlaneController
             plane.setWeightOfTheTransportedCargo(weightOfTheTransportedCargo);
             plane.setNumberOfCrew(numberOfCrew);
 
-            boolean flag = false;
-            ArrayList<Plane> arrayList = planeService.findAll();
-            for (int i = 0; i < arrayList.size(); i++)
-            {
-                if (arrayList.get(i).getPlaneBrand().equals(plane.getPlaneBrand()) &&
-                        arrayList.get(i).getPlaneModel().equals(plane.getPlaneModel()) &&
-                        arrayList.get(i).getNumberOfPassenger() == plane.getNumberOfPassenger() &&
-                        arrayList.get(i).getWeightOfTheTransportedCargo() == plane.getWeightOfTheTransportedCargo() &&
-                        arrayList.get(i).getNumberOfCrew() == plane.getNumberOfCrew())
-                {
-                    flag = true;
-                }
-            }
-
-            if (flag)
-            {
-                System.out.println("\nThis plane already exists");
-            }
-            else
-            {
-                planeService.create(plane);
-                System.out.println("\nThe plane has been successfully created");
-            }
+            planeService.create(plane);
+            System.out.println("\nThe plane has been successfully created");
         }
         catch (Exception e)
         {
@@ -132,15 +111,7 @@ public final class PlaneController
             plane.setWeightOfTheTransportedCargo(weightOfTheTransportedCargo);
             plane.setNumberOfCrew(numberOfCrew);
 
-            if (planeService.findById(plane.getId()) == null)
-            {
-                System.out.println("This id doesn't exist");
-            }
-            else
-            {
-                planeService.update(plane);
-                System.out.println("The plane has been successfully updated");
-            }
+            planeService.update(plane);
         }
         catch (Exception e)
         {
@@ -155,15 +126,7 @@ public final class PlaneController
             System.out.print("Enter a plane id >> ");
             String id = reader.readLine();
 
-            if (planeService.findById(id) == null)
-            {
-                System.out.println("This id doesn't exist");
-            }
-            else
-            {
-                planeService.delete(id);
-                System.out.println("The plane has been successfully deleted");
-            }
+            planeService.delete(id);
         }
         catch (Exception e)
         {

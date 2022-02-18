@@ -16,12 +16,20 @@ public class PlaneService
 
     public void update(Plane plane)
     {
-        planeDao.update(plane);
+        if (checkExistId(plane.getId()))
+        {
+            planeDao.update(plane);
+            System.out.println("The plane has been successfully updated");
+        }
     }
 
     public void delete(String id)
     {
-        planeDao.delete(id);
+        if (checkExistId(id))
+        {
+            planeDao.delete(id);
+            System.out.println("The plane has been successfully deleted");
+        }
     }
 
     public Plane findById(String id)
@@ -32,5 +40,15 @@ public class PlaneService
     public ArrayList<Plane> findAll()
     {
         return planeDao.findAll();
+    }
+
+    private boolean checkExistId(String id)
+    {
+        if (findById(id) == null)
+        {
+            System.out.println("This id doesn't exist");
+            return false;
+        }
+        return true;
     }
 }
